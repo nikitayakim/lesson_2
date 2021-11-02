@@ -1,0 +1,102 @@
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я
+pwd
+
+2) Создать папку
+mkdir folder_1
+
+3) Зайти в папку
+cd folder_1/
+
+4) Создать 3 папки
+mkdir folder_2 folder_3 folder_4
+
+5) Зайти в любую папку
+cd folder_2/
+ 
+6) Создать 5 файлов (3 txt, 2 json)
+touch file_1.txt file_2.txt file_3.txt file_4.json file_5.json
+
+7) Создать 3 папки
+mkdir folder_5 folder_6 folder_7
+
+8. Вывести список содержимого папки
+ls –la
+
+9) + Открыть любой txt файл
+vim file_1.txt
+
+10) + написать туда что-нибудь, любой текст.
+Нажимаю I (insert)
+Ввожу текст
+Нажимаю ESC
+
+11) + сохранить и выйти.
+Shift+:
+wq +Enter
+
+12) Выйти из папки на уровень выше
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+cd folder_2
+mv file_1.txt folder_5/file_1.txt
+mv file_2.txt folder_5/file_2.txt
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp file_3.txt folder_6
+cp file_4.json folder_6
+
+15) Найти файл по имени
+find . –name “file_3.txt” 
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail folder_5/file_1.txt
+
+17) вывести несколько первых строк из текстового файла
+Для начала введу 7 строк с названиями городов в file_3.txt 
+vim file_3.txt 
+Нажимаю I (insert)
+Ввожу текст
+Нажимаю ESC
+Shift+:
+wq +Enter
+Далее вывожу несколько первых строк из текстового файла
+head –n 2 file_3. txt
+Ввел  –n 2, так как по умолчанию  Head выводит 10 строк, а у меня их всего 7.
+
+18) вывести несколько последних строк из текстового файла
+tail –n 2 file_3. txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less file_3.txt
+ 
+20) вывести дату и время
+date
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000:
+curl http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Создал файл с названием script.sh. В нем прописал:
+#! /bin/bash
+echo "Зайти в папку"
+cd G:\script_1
+echo "Создать 3 папки"
+mkdir folder_2 folder_3 folder_4
+echo "Зайти в любую папку"
+cd folder_2/
+echo "Создать 5 файлов (3 txt, 2 json)"
+touch file_1.txt file_2.txt file_3.txt file_4.json file_5.json
+echo "Создать 3 папки"
+mkdir folder_5 folder_6 folder_7
+echo "Вывести список содержимого папки"
+ls -la
+echo "переместить любые 2 файла, которые вы создали, в любую другую папку"
+mv file_1.txt folder_5/file_1.txt
+mv file_2.txt folder_5/file_2.txt
+
+В терминале запустил этот файл командой ./script.sh
